@@ -4,11 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CrashDetector : MonoBehaviour
 {
+    [SerializeField] float Invoketime = 1f;
     void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.tag == "Ground")
         {
-            SceneManager.LoadScene(0);
+            Invoke("Relord",Invoketime);
         }
+    }
+
+    void Relord()
+    {
+        SceneManager.LoadScene(0);
     }
 }
