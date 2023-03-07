@@ -12,6 +12,7 @@ public class FInishLine : MonoBehaviour
         if(other.tag == "Player")
         {
             finishEffect.Play();
+            GetComponent<AudioSource>().Play();
             Invoke("Relord", Invoketime);
         }
     }
